@@ -1,0 +1,97 @@
+# Stream
+
+	additional package of java 8 called java.util.stream
+
+# Feature
+	~ not store element, just convey elements from source through pipeline of certain
+	  operation
+	~ does not modify its source. 
+	~ element of stream visited only once, to revisit same element new stream generated
+
+# Method
+
+	allMatch(); return all element which match the predicate
+
+	anyMatch(): return any element which match the predicate
+
+	static builder(): return builder for a stream
+
+	collect(): 	perform mutual reduction operation on the element of this stream
+				using Collector
+
+	collect(supplier, accumulator, combiner): perform mutual reduction operation on the element of this stream
+
+	static concat(): concatination of 
+
+	count(): return count of element
+
+	distinct(): return  of distinct element
+
+	empty(): return empty stream
+
+	filter():	return stream of element matches the predicate
+
+	findAny(): return optional describing of element of stream
+
+	findFirst(): return first element of stream in Optional Object
+
+	forEach(): perform action to each element
+
+	iterate(): return infinite sequential ordered stream
+
+	limit(): element no longer of this size
+
+	map(): return stream by applying function to element of stream
+
+	max(): return max element of stream
+
+	min(): return min element of stream
+
+	of(): return sequential stream containing single element
+
+	peek(): return stream, by providing action on each element / mainly used in debugging
+
+	reduce(): perform reduction on element of stream
+
+	reduce(identity, accumulator, combiner): 
+			perform reduction on element of stream using parameter
+
+	sorted(): return element in sorted order
+
+	toArray(): return array containing element using generator function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

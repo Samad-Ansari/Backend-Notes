@@ -1,0 +1,34 @@
+# Enum
+	The Enum in Java is a data type which contains a fixed set of constants.
+
+~ Java Enum internally inherits the Enum class, 
+
+	Enum improves type safety
+
+	Enum can be easily used in switch
+
+	Enum can be traversed
+
+	Enum can have fields, constructors and methods
+
+	Enum may implement many interfaces but cannot extend any class because it internally extends Enum class
+
+
+~	Constructor of enum type is private. If you don't declare private compiler internally creates private constructor.
+
+# Enum Class
+
+	it implements Set class & used with enum types
+
+# Method
+	allOf(Class<E> elementType)	It is used to create an enum set containing all of the elements in the specified element type.
+
+	copyOf(Collection<E> c)	It is used to create an enum set initialized from the specified collection.
+
+	noneOf(Class<E> elementType)	It is used to create an empty enum set with the specified element type.
+
+	of(E e)	It is used to create an enum set initially containing the specified element.
+
+	range(E from, E to)	It is used to create an enum set initially containing the specified elements.
+
+	clone()	It is used to return a copy of this set.

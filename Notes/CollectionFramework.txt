@@ -1,0 +1,407 @@
+Collection Framework : storing and manipulating a group of objects
+===============================
+
+# Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, Vector, LinkedList,  
+  PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+# Iterator interface : facility of iterating the elements
+ Method => hasNext(), next(), remove()
+
+# Collection Interface : 
+	Implemented by all the classes, builds the foundation
+	Subinterfaces are List, Set & Queue
+
+
+
+ Hierarchy of Collection Framework
+
+[Iterable] => [Collection] => { [List], [Queue], [Set]}
+
+[List] => { (ArrayList), (LinkedList), (Vector) }
+
+[Queue] => { [Deque] , (PriorityQueue), (ArrayDeque)}
+
+{ [List], [Deque] } => (LinkedList)
+
+[Set] => { (HashSet), (LinkedHastSet), [SortedSet]}
+
+[SortedSet] => (TreeSet)
+
+# Collection Interface Methods
+ 
+ add(), 
+ size(), 
+ remove(), 
+ iterator(), 
+ addAll(), 
+ removeAll(), 
+ clear(),
+ contains,
+ isEmpty(),
+ equal(),
+
+..................................
+
+# ArrayList Class
+  uses a dynamic array for storing elements. no size limit, implements List interface
+  maintain insertion order, 
+  non synchronized,
+  allow random access,
+
+
+# Declaration ArrayList class
+
+=> public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable  
+
+
+# ArrayList Contructor
+  ArrayList() -> empty list
+
+  ArrayList(int cap) -> list of capacity
+
+  ArrayList(Collection<? extends E> c) -> list with an element of collection
+
+....................................
+
+~ Collection class => static method sort() 
+  eg : list.sort()
+
+
+# Way to iterate elements of the collection
+
+1. Iterator Interface()
+2. for-each() loop
+3. ListIterator interface
+4. for loop
+5. forEach()
+6. forEachRemaining()
+
+.....................................
+
+# LinkedList class
+  Use double linked list to store element.
+  It inherits AbstractList class and implements List & Deque interface
+
+: contain duplicate elements
+: maintain insertion order
+: non synchronized
+: manipulation is fast 
+: used as list, stack or queue
+
+
+# Declaration LinkedList class
+
+  public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable
+
+
+# LinkedList Constructor
+
+  LinkedList() -> contruct empty list
+
+  LinkedList(Collection<? extends E> c) ->  construct list with element of collection
+
+.....................................
+
+
+# List Interface
+
+: provides facility to maintain the ordered collection.
+: duplicate elements
+: allow store null elements
+
+# Declaration of List interface
+
+public interface List<E> extends Collection<E>
+
+
+# List Iterator interface
+  used to traverse element forward and backward direction
+
+# Declaration of List iterator interface
+
+  public interface Listiterator<E> extends iterator<E>
+
+# Method =>
+
+  add() ->
+  remove() ->
+  hasNext() ->
+  next() ->
+  hasPrevious() ->
+  previous() ->
+  more.
+
+...................................
+
+# HashSet
+
+  HashSet class is used to create a collection that uses a hash table for storage.
+  Inherits the AbstractSet class and implements Set interface.
+
+  HashSet stores the elements by using a mechanism called hashing.
+
+  HashSet contains unique elements only.
+
+  HashSet allows null value.
+
+  HashSet class is non synchronized.
+
+  HashSet doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+
+  HashSet is the best approach for search operations.
+
+  The initial default capacity of HashSet is 16, and the load factor is 0.75.
+
+# Declaration
+  public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable  
+
+# Methods
+
+  1)  boolean add(E e)  It is used to add the specified element to this set if it is not already present.
+
+  2)  void  clear() It is used to remove all of the elements from the set.
+  
+  3)  object  clone() It is used to return a shallow copy of this HashSet instance: the elements themselves are not cloned.
+  
+  4)  boolean contains(Object o)  It is used to return true if this set contains the specified element.
+  
+  5)  boolean isEmpty() It is used to return true if this set contains no elements.
+  
+  6)  Iterator<E> iterator()  It is used to return an iterator over the elements in this set.
+  
+  7)  boolean remove(Object o)  It is used to remove the specified element from this set if it is present.
+  
+  8)  int size()  It is used to return the number of elements in the set.
+  
+  9)  Spliterator<E>  spliterator() It is used to create a late-binding
+
+.........................................
+
+# LinkedHashSet
+
+  Java LinkedHashSet class contains unique elements only like HashSet.
+
+  Java LinkedHashSet class provides all optional set operations 
+
+  permits null elements.
+
+  Java LinkedHashSet class is non-synchronized.
+
+  Java LinkedHashSet class maintains insertion order.
+
+# Declaration
+  public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, Serializable  
+
+
+# Methods similar to hashset
+
+.........................................
+
+# TreeSet
+
+  Java TreeSet class contains unique elements only like HashSet.
+
+  Java TreeSet class access and retrieval times are quite fast.
+
+  Java TreeSet class doesn't allow null elements.
+
+  Java TreeSet class is non-synchronized.
+
+  Java TreeSet class maintains ascending order.
+
+  The TreeSet can only allow those generic types that are comparable. For example The Comparable interface is being implemented by the StringBuffer class.
+
+  Uses Binary Tree, self balancing
+
+  Take O(log(N)) complexity
+
+# Declaration 
+
+  public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Cloneable, Serializable    
+
+
+~ Necessary to implement Comparable interface in TreeSet, when element is object
+
+# Methods 
+  similar to hashset and linkedhashset
+
+...................................................
+
+
+# Map interface
+
+  Each key and value pair is known as an entry. A Map contains unique keys.
+  A Map doesn't allow duplicate keys, but you can have duplicate values. 
+  HashMap and LinkedHashMap allow null keys and values, but TreeMap doesn't allow any null key or value.
+
+..................................
+
+# HashMap
+  
+  Java HashMap contains values based on the key.
+  Java HashMap contains only unique keys.
+  Java HashMap may have one null key and multiple null values.
+  Java HashMap is non synchronized.
+  Java HashMap maintains no order.
+  The initial default capacity of Java HashMap class is 16 with a load factor of 0.75.
+
+# Element :
+    Key, Value, Hash, Next
+
+
+# Declaration
+
+  public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable  
+
+
+# Working of HashMap
+
+# Hashing 
+  It is the process of converting an object into an integer value. 
+  The integer value helps in indexing and faster searches.
+
+
+  equals(): It checks the equality of two objects. It compares the Key, whether they are equal or not. It is a method of the Object class. It can be overridden. If you override the equals() method, then it is mandatory to override the hashCode() method.
+
+  hashCode(): This is the method of the object class. It returns the memory reference of the object in integer form. The value received from the method is used as the bucket number. The bucket number is the address of the element inside the map. Hash code of null Key is 0.
+
+  Buckets: Array of the node is called buckets. Each node has a data structure like a LinkedList. More than one node can share the same bucket. It may be different in capacity.
+
+
+# Methods 
+  
+  boolean isEmpty() It is used to return true if this map contains no key-value mappings.
+
+  Object clone()  It is used to return a shallow copy of this HashMap instance: the keys and values themselves are not cloned.
+  
+  Set entrySet()  It is used to return a collection view of the mappings contained in this map.
+ 
+  Set keySet()  It is used to return a set view of the keys contained in this map.
+  
+  V put(Object key, Object value) It is used to insert an entry in the map.
+  
+  void putAll(Map map)  It is used to insert the specified map in the map.
+  
+  V putIfAbsent(K key, V value) It inserts the specified value with the specified key in the map only if it is not already specified.
+  
+  V remove(Object key)  It is used to delete an entry for the specified key.
+  
+  boolean remove(Object key, Object value)  It removes the specified values with the associated specified keys from the map.
+  
+  boolean containsValue(Object value) This method returns true if some value equal to the value exists within the map, else return false.
+  
+  boolean containsKey(Object key) This method returns true if some key equal to the key exists within the map, else return false.
+  
+  boolean equals(Object o)  It is used to compare the specified Object with the Map.
+
+  V get(Object key) This method returns the object that contains the value associated with the key.
+
+  V merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)  If the specified key is not 
+  already associated with a value or is associated with null, associates it with the given non-null value.
+
+  V replace(K key, V value) It replaces the specified value for a specified key.
+  
+  boolean replace(K key, V oldValue, V newValue)  It replaces the old value with the new value for a specified key.
+  
+  void replaceAll(BiFunction<? super K,? super V,? extends V> function) It replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.
+
+  Collection<V> values()  It returns a collection view of the values contained in the map.
+  
+  int size()  This method returns the number of entries in the map.
+
+
+..............................................................
+
+# LinkedHashMap 
+
+  Java LinkedHashMap contains values based on the key.
+  Java LinkedHashMap contains unique elements.
+  Java LinkedHashMap may have one null key and multiple null values.
+  Java LinkedHashMap is non synchronized.
+  Java LinkedHashMap maintains insertion order.
+  The initial default capacity of Java HashMap class is 16 with a load factor of 0.75.
+
+# Element :
+  Key, Value, Hash, Next,( Before, After )
+  Before & After mainly used to maintain order
+
+  Entire LinkedHashMap Class store : Head , Tail
+
+# Declaration 
+  
+  public class LinkedHashMap<K,V> extends HashMap<K,V> implements Map<K,V>  
+
+.............................................................
+
+# TreeMap
+
+  Java TreeMap contains values based on the key. 
+  It implements the NavigableMap interface and extends AbstractMap class.
+  Java TreeMap contains only unique elements.
+  Java TreeMap cannot have a null key but can have multiple null values.
+  Java TreeMap is non synchronized.
+  Java TreeMap maintains ascending order.
+
+# Declaration   
+  public class TreeMap<K,V> extends AbstractMap<K,V> implements NavigableMap<K,V>, Cloneable, Serializable  
+
+......................................................
+
+# HashTable
+
+  Java Hashtable class contains unique elements.
+  Java Hashtable class doesn't allow null key or value.
+  Java Hashtable class is synchronized.
+  The initial default capacity of Hashtable class is 11 whereas loadFactor is 0.75.
+
+  public class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>, Cloneable, Serializable  
+
+
+.......................................................
+
+# Queue Interface
+
+  It is used to keep the elements that are processed in the First In First Out (FIFO) manner.
+  where insertion of elements occurs at the end of the list, and removal of elements occur at the beginning of the list.
+
+# Declaration
+  public interface Queue<E> extends Collection<E>  
+
+# Priority Queue
+
+  way for processing the objects on the basis of priority.
+
+# Deque interface
+
+   subtype of the interface queue. 
+
+# ArrayDeque class
+
+  Unlike Queue, we can add or remove elements from both sides.
+  Null elements are not allowed in the ArrayDeque.
+  ArrayDeque is not synchronized
+  ArrayDeque has no capacity restrictions.
+  ArrayDeque is faster than LinkedList and Stack.
+
+# Declaration
+  
+  public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cloneable, Serializable
+  
+
+# Collection class
+  
+  used exclusively with static methods 
+  It inherits Object class.
+
+# Methods
+
+  min()
+  max()
+  sort()
+  reverse()
+  addAll()
+  binarySearch()
+
+
+
+

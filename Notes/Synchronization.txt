@@ -1,0 +1,93 @@
+# Synchronization in Java
+	capability to control access of shared resources to multiple threads, allow only one thread to access the shared resources
+
+# Type of Synchronization
+	1. Process Synchronization 2. Thread Synchronization
+
+# Thread Synchronization
+	1. Mutual Exclusive
+
+1. Mutual Exclusive
+	it prevents one thread to interfering another thread while sharing data.
+
+	// Lock in java
+		Every object is associated with a lock, An object must acquire obect's lock before accessing them, and release the lock when it is done
+
+	# Ways to achieve Mutual Exclusive Synchronization Using Synchronization Method
+
+	1 Synchronized Method
+		using 'synchronized' keyword
+
+		eg : synchronized void printer(){ ... }
+
+	~ another syntax => static void print() {
+									synchronized (Table.class){ ... }
+							   }
+
+	2 Synchronized Block
+		Only to synchronize a block of code
+		= Scope of synchronized block smaller than method
+		= more efficient than synchronized method
+
+		eg : synchronized(Object reference) { ... }
+
+	3 Static Synchronization
+		Static Synchronization applied to Class level
+		Obj1 -> t1 & t2, Obj2 -> t3 & t4
+		there may occur interference of t1 with t3 or t4 | t2 with t3 or t4
+		
+		eg: static int var = 4; 	synchronized static method() { ... }
+
+# Deadlock 
+	A condition when one thread is waiting for an object lock, that is acquired by another thread and second thread is waiting 
+	for an object lock that is acquired by first thread 
+
+2. Inter Thread Communication
+	It allow synchronized thread to communicate with each other
+	A mechanism in which a thread is paused running in its critical section and another thread is allowed to enter 
+	in its critical section & to be executed after which it notify the main thread.
+
+	these methods are object class methods
+
+# Method
+
+1. Wait() method
+	cause current thread to release lock and wait until another thread invokes the notify() method or notifyall(),
+	or specified time given
+	it throws InterruptedException
+	eg : wait() throws InterruptedException , wait(time) throws InterruptedException
+
+2. notify() method
+	wake up a single thread and release object lock
+	eg : public final void notify()
+
+3. notifyAll() method
+	wake up all thread that are in waiting state
+	eg : public final void notifyAll()
+
+~ Thread should own the lock i.e : thread should be inside the synchronized area
+
+
+# Interrupting a Thread
+
+	If any thread is in sleeping or waiting state i.e. sleep() or wait(), calling the interrupt() method on the thread, breaks out the sleeping or waiting state throwing InterruptedException. 
+
+
+# Interrupt Method
+	public void interrupt() -> cause the interruption
+
+	public static boolean interrupted() -> it return the interrupted flag and set the flag to false if true
+
+	public boolean isInterrupted() -> it return the interrupted flag : true/false
+
+
+
+
+
+
+
+
+
+
+
+

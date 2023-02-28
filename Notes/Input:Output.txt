@@ -1,0 +1,237 @@
+# Input / Output
+	It is used to process the input and produce output
+
+	java uses stream to make I/O faster
+
+	file handling
+
+# Stream
+	
+	a sequence of data
+
+These method create stream automatically
+
+1) System.out: standard output stream
+
+2) System.in: standard input stream
+
+3) System.err: standard error stream
+
+# OutputStream
+	Used to write data to a destination eg : file, array, peripheral device
+
+# OutputStream class :
+	an abstract class
+	represent output stream of byte
+
+# Method (all throws IOException)
+	
+	1. write(int)	is used to write a byte to the current output stream.
+
+	2. write(byte[])n	is used to write an array of byte to the current output stream.
+
+	3. flush()	flushes the current output stream.
+
+	4. close()	is used to close the current output stream.
+
+# InputStream
+	Used to read data from source eg : file, array, peripheral device
+
+# Method
+
+	1. int read() reads the next byte of data from the input stream. It returns -1 at the end of the file.
+	
+	2. int available()	returns an estimate of the number of bytes that can be read from the current input stream.
+
+	3. void close()	is used to close the current input stream.
+
+
+# FileOutputStream class
+
+	writing (primitive value) data to a file
+
+# Method
+	
+	void finalize()	It is used to clean up the connection with the file output stream.
+
+	void write(byte[] ary)	It is used to write ary.length bytes from the byte array to the file output stream.
+
+	void write(byte[] ary, int off, int len)	It is used to write len bytes from the byte array starting at offset off to the file output stream.
+	
+	void write(int b)	It is used to write the specified byte to the file output stream.
+	
+	FileChannel getChannel()	It is used to return the file channel object associated with the file output stream.
+	
+	FileDescriptor getFD()	It is used to return the file descriptor associated with the stream.
+	
+	void close()	It is used to closes the file output stream.
+
+
+# FileInputStream class
+
+	 read input bytes from a file. such as image data, audio, video etc.
+
+# Method 
+	
+	int available()	return the estimated number of bytes that can be read from the input stream.
+
+	int read()	read the byte of data from the input stream.
+
+	int read(byte[] b)	read up to b.length bytes of data from the input stream.
+
+	int read(byte[] b, int off, int len)	read up to len bytes of data from the input stream.
+
+	protected void finalize()	It is used to ensure that the close method is call when there is no more reference to the file input stream.
+	
+	void close()	It is used to closes the stream.
+
+# BufferedOutputStream
+
+	used for buffering output stream , (buffer to store data)
+	It is fast
+
+
+adding Buffer to OutputStream
+
+	OutputStream os= new BufferedOutputStream(new FileOutputStream("D:\\IO Package\\testout.txt"));  
+
+# Method
+
+	BufferedOutputStream(OutputStream os)	It creates the new buffered output stream which is used for writing the data to the specified output stream.
+
+	BufferedOutputStream(OutputStream os, int size)	It creates the new buffered output stream which is used for writing the data to the specified output stream with a specified buffer size.
+
+	void write(int b)	It writes the specified byte to the buffered output stream.
+	
+	void flush()	It flushes the buffered output stream.
+
+
+# BufferedInputStream
+
+	Used to read data from stream,
+	It is fast
+
+~ When the bytes from the stream are skipped or read, the internal buffer automatically refilled from the contained 	
+  input stream, many bytes at a time.
+
+# Method 
+	BufferedInputStream(InputStream IS)	It creates the BufferedInputStream and saves it argument, the input stream IS, for later use.
+
+	BufferedInputStream(InputStream IS, int size)	It creates the BufferedInputStream with a specified buffer size and saves it argument, the input stream IS, for later use.
+
+	int available()	It returns an estimate number of bytes that can be read from the input stream without blocking by 					the next invocation method for the input stream.
+	
+	int read()	It read the next byte of data from the input stream.
+	
+
+	void close()	It closes the input stream and releases any of the system resources associated with the stream.
+	
+	void reset()	It repositions the stream at a position the mark method was last called on this input stream.
+	
+	void mark(int readlimit)	It sees the general contract of the mark method for the input stream.
+	
+
+# Console class
+	
+	Used to get input from console. It provides methods to read texts and passwords.
+
+# Method
+
+	Reader reader()	It is used to retrieve the reader object associated with the console
+
+	String readLine()	It is used to read a single line of text from the console.
+
+	String readLine(String fmt, Object... args)	It provides a formatted prompt then reads the single line of text from the console.
+	
+	char[] readPassword()	It is used to read password that is not being displayed on the console.
+	
+	char[] readPassword(String fmt, Object... args)	It provides a formatted prompt then reads the password that is not being displayed on the console.
+	
+	Console format(String fmt, Object... args)	It is used to write a formatted string to the console output stream.
+	
+	Console printf(String format, Object... args)	It is used to write a string to the console output stream.
+
+	PrintWriter writer()	It is used to retrieve the PrintWriter object associated with the console.
+
+	void flush()	It is used to flushes the console.
+
+
+# File Permission
+
+	contains the relation related to file or directory
+
+1. D:\\IO\\-: the permission is associated with all sub directories and files recursively.
+
+2. D:\\IO\\*: the permission is associated with all directory and files excluding sub directories.
+
+# Writer
+
+	abstract class for writing to character stream
+	subclass must implement are write(char[], int, int), flush(), and close().
+	It syncrhonize operation on stream
+
+# Reader
+
+	abstract class for reading character streams.
+	subclass must implement are read(char[], int, int) and close().
+	It do synchronize operation on stream
+
+
+
+# FileWriter class
+
+	Used to write character data into file, (no need to convert in byte)
+
+
+	FileWriter(String file)	Creates a new file. It gets file name in string.
+	
+	FileWriter(File file)	Creates a new file. It gets file name in File object.
+	
+	void write(String text)	It is used to write the string into FileWriter.
+	
+	void write(char c)	It is used to write the char into FileWriter.
+	
+	void write(char[] c)	It is used to write char array into FileWriter.
+	
+	void flush()	It is used to flushes the data of FileWriter.
+	
+	void close()	It is used to close the FileWriter.
+
+# FileReader class
+
+	Used to read data from file, return in byte format
+
+# Methods
+
+	int read()
+	void close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+# SQL Operator
+
+Always used with 'WHERE' clause
+
+# Unary Operator
+	used only one operand for unary operation
+
+# Binary Operator
+	used two operand for binary operation
+
+	s

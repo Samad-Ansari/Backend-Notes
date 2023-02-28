@@ -1,0 +1,35 @@
+# Serializability
+
+	A mechanism of writing the state of an object into byte-stream
+
+# Deserializability
+
+	converting byte-stream into an object
+
+~ It is platform independent
+
+
+# Serializable Interface
+
+~ It is a marker interface, to add certain capability 
+
+~ object with serializable implement can be used for Stream
+
+# Methods
+
+	ObjectOutputStream(OutputStream out): It creates an ObjectOutputStream that writes to the specified OutputStream.
+
+	writeObject(Object obj): It writes the specified object to the ObjectOutputStream.
+
+	flush(): It flushes the current output stream.
+
+	close(): It closes the current output stream.
+
+	ObjectInputStream(InputStream in): It creates an ObjectInputStream that reads from the specified InputStream.
+	
+	readObject(): It reads an object from the input stream.
+	
+	close(): It closes ObjectInputStream.
+
+
+

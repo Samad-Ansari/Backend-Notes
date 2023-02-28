@@ -1,0 +1,68 @@
+# DataType
+
+	Used to represent nature of data that stored in database table
+
+# Classified into 3 types
+
+= String
+
+	CHAR(Size)  -> fixed length string -> 0 to 255 ->  Default 1
+	VARCHAR(Size) -> variable length -> 0 to 65535 -> 
+
+	BINARY(Size) ->  store binary byte strings -> Default 1
+	VARBINARY(Size) -> store binary byte strings -> 	
+
+	TINY(Size) -> Store string -> 0 to 255
+	TINYTEXT -> ,,
+
+	MEDIUMTEXT -> Store string -> 2^24
+	LONGTEXT -> Store string -> 2^32
+
+	ENUM(val1, val2, ...) 
+
+	SET(val1, val2, ...) -> specify a string having 0 or more values
+
+	BLOB(size) -> for binary large objects -> holds upto 65535
+
+= Numeric
+
+	BIT(size) -> used for bit-value type -> 1 to 64
+
+	INT(size) -> integer values -> (unsigned) -2^31 to 2^32, (signed) 2^64
+
+	INTEGER(size) -> 
+
+	FLOAT(size, d) -> (d for decimal)
+
+	FLOAT(p) -> for float or double -> p => (0, 24) float , p => (25,53) double
+
+	DOUBLE(size, d) -> 	d => number of digit after . ,
+
+	DECIMAL(size, d)
+
+	BOOL -> specify boolean value
+
+
+= Date & Time Date Types
+
+	DATE -> specify date formate -> 1000-01-01' to '9999-12-31'
+
+	DATETIME(fsp) -> specify date & time 
+
+	TIMESTAMP(fsp) -> number of second since 1970
+
+	TIME(fsp) -> specify time format
+
+	YEAR -> 1901 to 2155
+
+
+
+
+
+
+
+
+
+
+
+

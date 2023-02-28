@@ -1,0 +1,14 @@
+# Interface
+
+	: blueprint of class
+	: to achieve abstraction & multiple inheritance & loose coupling
+	: compiler adds ' public abstract ' keyword to method
+  
+
+~ Methods : default, static & private
+~ Fields : public, static, & final
+
+class ---> extends ---> class
+class ---> implements ---> interface
+interface ---> extends ---> interface
+

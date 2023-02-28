@@ -1,0 +1,241 @@
+# MultiThreading
+	process of executing multiple threads simultaneously
+
+
+# Advantage
+
+	Doesn't block user, allow multiply operation
+	Saves time
+	Each thread are independent, doesn't affect other threads
+
+
+# Multitasking
+
+	process of executing multiple tasks simultaneously, utilize CPU
+> 	two ways to achieve multitasking
+
+1	Process based Multitasking
+	Each process has seperate memory area
+	heavyweight & time consuming in context switching
+
+2	Thread based multitasking
+	Each thread uses same memory
+	context switching saves time
+
+~ Process means program in execution
+~ Thread is a segment of process
+
+
+# Thread
+
+	smallest unit of processing. used to achieve multitasking
+	it uses shared memory area, saves memory
+	context switching takes less time
+	egs => games, media player, animation etc
+
+~ At a time one thread is executed only
+
+# Thread class
+
+	Thread classs extends Object class & implements Runnable interface
+
+Methods
+
+join() -> waits for a thread to die, throws IllegalArgumentException | InterruptedException
+
+(static) currentThread() -> return reference to current thread
+eg -> Thread.currentThread()
+
+(static) sleep() -> sleeps thread for specified time
+
+get, setPriority() -> return or change priority of thread
+
+get, setName() -> return or change name of thread
+
+~ Set Thread name by passing String into thread constructor and super("Name Change")
+
+isDaemon() -> return boolean if thread is a daemon, 
+
+setDaemon(boolean) ->
+	setDaemon(true) : set thread to daemon
+
+	setDaemon(false) : set thread to user thread
+
+	! use before start thread
+
+# Daemon Thread
+
+	low-priority thread, runs in background
+	provide service to user thread
+	no role other than serve user threads
+	eg -> Garbage Collection, finalizer etc
+
+	whenever last non-daemon thread terminate, all daemon thread terminated automatically
+
+~ to set thread as daemon it must not be started, else throw IllegalThreadStateException
+
+interrupt() -> used to interrupt the thread. only if thread is sleeping or waiting state, it interrupt thread by throwing InterruptedException
+
+toString() -> return  name, priority, thread group
+
+
+# Thread Scheduler
+	Decide which thread to run or execute and which thread to wait
+	based on arrival time and prioriy 
+
+# Thread Scheduler Algorithm
+
+1 First Come First Serve Scheduling: 
+	execute based on arrival, non-preemptive
+
+2 Time-slicing scheduling: 
+	time-slices provided for each thread
+
+3 Preemptive Priority Scheduling: 
+	based on priority, but also time slices provided
+
+~ Each thread shares heap but has seperate stacks
+~ Each thread has its own stack
+
+
+# Thread Pool
+
+	contains a collection of threads on waiting state that are available to perform tasks
+
+	a thread is pulled & assigned job, after completing it return to thread pool again
+
+# Thread Pool Methods
+
+newFixedThreadPool(int s) ->
+	create thread pool of fixed size
+
+newCachedThreadPool() ->
+	create new thread pool, create new threads also previously create thread
+
+newSingleThreadExecutor() -> 
+	create new thread
+
+
+// Thread can be created using thread & runnable
+
+Runnable provide facility to define number of thread ( eg 50 thread ). It will create the thread in Thread Pool
+
+Thread pool always maintain given number of thread no matter what happen
+Even if a thread is completed and terminated. It will re create that thread & maintain the number of thread
+
+
+With out using thread it is a costly process of CPU and Memory
+
+Note =>
+
+= if thread pool not ended explicitly, program continue to execute and never ends
+
+= same thread can be used if thread has finished execution
+
+= specify maximum thread to run in JVM. to reduce probability of running JVM out of memory
+
+
+# Risk
+
+Deadlock : waiting of thread in queue
+
+Thread Leakage : when a thread removed from pool to execute task but not returning after completion of task
+
+Resource Thrashing : time is wasted in context switching or more thread than required
+
+
+# Thread Group
+	a way to group multiple threads in a single object, allow suspend, resume, interrupt group of thread with one method call
+
+	// initial thread group has a parent
+	// each thread access own group information
+
+
+# ShutdownHook
+	special constructor provide facility to add some code to be run when the JVM is shutting down
+	Helpful when kill request by OS or lack of memory
+
+	eg press ctrl+c during execution shut down hook executed
+
+~ Factory Method - Return instance of a class
+
+
+# Garbage Collection
+
+-	garbage means object that is not referenced
+	it is a way to destroy unused objects
+	it is a part of JVM
+
+# Finalized() method
+	invoked each time before garbage is collected, perform cleanup 	processing
+
+	// protected void finalize()
+
+~ 	Garbage collector only collects object created by 'new' Keyword, try using finalize() for object without new
+
+~	Garbage collection performed by daemon thread
+~	it first calls finalized()
+
+# gc() method
+	found in System & Runtime classes
+
+	// static void gc(){];}
+
+# Java Runtime class
+	used to interact with java runtime environment.
+	Runtime.getRuntime() -> return instance of Runtime class
+
+# Runtime class methods
+
+	getRuntime() -> return instance of Runtime class
+
+	exit() -> terminates virtual machine
+
+	addShutdownHook(Thread hook) ->	register new hook thread
+
+	exec(String command) ->	execute given command
+
+	freeMemory() ->	return amount of free memory in JVM
+
+	totalMemory() -> return total memery
+
+
+
+
+# Thread Important Method 
+
+1. Sleep()
+	It is being used to halt the working of a thread for a given amount of time.
+	Thread goes to sleep state
+
+	eg : 
+	public static void sleep(long mls) throws InterruptedException   
+	public static void sleep(long mls, int n) throws InterruptedException   
+
+2. run()
+	Each thread starts in a separate call stack.
+
+	Invoking the run() method from the main thread, the run() method goes onto the current call stack rather than at new call stack.
+
+3. join()
+	When the join() method is invoked, the running thread stops its execution and the thread goes into the wait state. 
+	The running thread remains in the wait state until the thread on which the join() method is invoked has achieved its dead state. 
+
+	If interruption of the thread occurs, then it throws the InterruptedException.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

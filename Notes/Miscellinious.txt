@@ -1,0 +1,24 @@
+Employee e1 = ne Employee();
+
+# Shallow Comparison
+
+	(e1 == e2) => check based on the memory address
+
+# Deep Comparision
+	(e1.equal(e2))
+
+
+# Equal & hashcode contract
+
+	1. if two object are equal by ' obj1.equal(obj2) ' then there hashcode be same
+	2. two different object may have same hashcode
+	3. when hashcode is same then equal method is checked
+
+	when you override the equal method, must override the hashcode method
+
+# Optional 
+	Used to represent a value which may or may not present
+	it is to to avoid NullPointerException
+
+# Method 
+	isPresent(), get(), 

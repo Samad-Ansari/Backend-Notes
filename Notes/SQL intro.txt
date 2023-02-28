@@ -1,0 +1,211 @@
+# SQL Intro
+
+It is a structured query language
+
+standart language for storing, manipulating and retrieving data in database
+
+# Command
+
+1. Create Command
+
+	Used to create new database, new table, and other object of the database
+
+2. Update Command
+
+	Used to updating or changing the stored data in database
+
+3. Delete Command
+
+	Used to remove or erase single or multiple record from database
+
+4. Drop Command
+	
+	Used to delete entire table from database
+
+5. Insert Command
+	
+	Used for inserting data or record into the database table
+
+
+# Diff of SQL from No SQL
+
+1. a relational database management system
+
+2. a structured query language
+
+3. scheme is predefined, fixed and static
+
+4. vertically scalable
+
+5. In form of row and column
+
+6. follows ACID property
+
+7. eg : Oracle, Postgres, SQlite and Mysql are SQL database system
+
+
+# Advantage
+
+1. Portability
+
+2. High Speed 
+
+
+# Syntax & Statement
+
+1. SELECT
+
+	 SELECT column_name1, column_name2, .…, column_nameN  
+    [ FROM table_name ]  
+    [ WHERE condition ]  
+    [ ORDER BY order_column_name1 [ ASC | DESC ], .... ];  
+
+2. UPDATE
+
+	UPDATE table_name  
+	SET column_name1 = new_value_1, column_name2 = new_value_2, ...., column_nameN = new_value_N  
+	[ WHERE  CONDITION ];  
+
+3. DELETE
+
+	DELETE FROM table_name 	 
+	[ WHERE CONDITION ];  
+
+4. CREATE
+	
+	CREATE TABLE table_name  
+	(  
+	column_name1 data_type [column1 constraint(s)],  
+	column_name2 data_type [column2 constraint(s)],  
+	.....  
+	.....,  
+	column_nameN data_type [columnN constraint(s)],  
+	PRIMARY KEY(one or more col)  
+	);  
+
+
+5. ALTER TABLE
+
+	Used for adds, delete and modifies the columns of table in database
+
+
+	a) adding new column
+
+		ALTER TABLE table_name ADD column_name datatype[(size)];
+
+
+	b) modify column
+
+		ALTER TABLE table_name MODIFY column_name column_datatype[(size)];  
+
+	c) drop column
+
+		ALTER TABLE table_name DROP COLUMN column_name;  
+
+
+6. DROP TABLE
+
+	DROP TABLE [ IF EXISTS ]  
+	table_name1, table_name2, ……, table_nameN;  
+
+7. CREATE DATABASE
+
+	CREATE DATABASE database_name
+
+8. DROP DATABASE
+
+	DROP DATABSE database_name
+
+9. INSERT INTO 
+
+	Insert data or record into existing table
+
+	INSERT INTO table_name (   column_name1,  column_name2, .…, column_nameN )  
+	VALUES (value_1, value_2, ..…,value_N );
+
+10. TRUNCATE TABLE 
+
+	delete all records from table
+
+	TRUNCATE TABLE table_name;  
+
+11. Describe  
+	
+	tell something about table
+
+	DDESCRIBE table_name | view_name; 
+
+12. Distinct
+
+	To show distinct values from specified column of table
+
+	SELECT DISTINCT column_name1, column_name2, ...  
+	FROM table_name; 
+
+13. COMMIT 
+	
+	saves permanent changes
+
+	DELETE FROM Employee_details  
+	WHERE salary = 30000;  
+	COMMIT;
+
+14. ROLLBACk
+
+	undo the transactions and operations which are not saved
+
+	ROLLBACK
+
+15. CREATE INDEX
+
+	create new Index in SQL
+
+	CREATE INDEX index_name  
+	ON table_name ( column_name1, column_name2, …, column_nameN );  
+
+16. DROP INDEX
+
+	delete the existing index
+
+	DROP INDEX index_name;
+
+
+17. USE
+
+	selects the existing SQL database
+
+	USE database_name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
